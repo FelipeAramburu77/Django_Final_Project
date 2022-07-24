@@ -1,0 +1,30 @@
+{% extends "App/index.html" %}
+
+{% load static %}
+{% block tituloPagina %}
+Update user
+{% endblock %}
+
+
+{% block contenido_que_cambia %}
+
+<body>
+    <section class="bg-light py-2">
+        <div class="container px-1">
+            <div class="row gx-1 justify-content-center">
+            <h3 figure class="text-center">Edit profile here, {{user}}</h3>
+    <div>
+        <form action="" method="POST"> {% csrf_token %}
+            
+            <table>
+                {{mi_formulario.as_table}}    
+            </table>
+
+            <input type="submit", value="Send">
+            <a href="{%  url 'Inicio' %}"> 
+                <button type="button" class="btn btn-outline-secondary btn-sm">Back to home</button>
+        </form>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "App/index.html" %}
+
+{% load static %}
+Search product
+{% block contenido_que_cambia %}
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+<section class="bg-light py-2">
+        <div class="container px-1">
+            <div class="row gx-1 justify-content-center">    
+    <p>Search for a product:
+
+        <form action="" method="post">
+            {% csrf_token %}
+
+            <input type="" name="product" id="brand"> 
+
+            <input type="submit" value="Search" class="btn btn-outline-success btn-sm"> <a href="{%  url 'Productos' %}">                        
+                <button type="button" class="btn btn-outline-secondary btn-sm">Back to products</button>
+            </a>
+        </form>    
+    </p>
+
+
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Prize</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Stock</th>
+            </tr>
+            </thead>
+
+            <tbody>
+                {% for resultado in productos %}
+                    <tr>
+                        <td scope="1">{{resultado.product}}</td>
+                        <td scope="2">{{resultado.prize}}</td>
+                        <td scope="3">{{resultado.get_brand_display}}</td>
+                        <td scope="4">
+                        {% if producto.stock == 0 %}
+                        <p style="color: red;">No stock left</p>
+                        
+                        {% elif producto.stock > 0 and producto.stock < 10 %}
+                            <p style="color: rgb(192, 192, 59);">Last units</p>
+
+                        {% else %}
+                            <p style="color: green;">Available</p>
+                        {% endif %}
+                        </td>
+                    </tr>
+            <tbody>
+                
+                {% endfor %}
+        </table>
+    
+</section>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "App/index.html" %}
+
+{% load static %}
+
+{% block tituloPagina %}
+Product form
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+
+<div>
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <div style="background-color: rgba(250, 252, 243, 0.712);">
+    <h3 figure class="text-center">Add a new product</h3>
+
+    <div style="background-color: rgba(250, 252, 243, 0.712);">
+
+            <section class="bg-light py-2">
+                <div class="container px-1">
+                    <div class="row gx-1 justify-content-center">
+    
+        {% if mi_formulario.errors %}
+        <p style="color:red">Check the entry</p>
+        {% endif %}
+
+        <form action="" method="post">
+            {% csrf_token %}
+        
+            {{mi_formulario.as_p }}
+        
+            <input type="submit" class="btn btn-outline-success btn-sm" value="Add a new product">
+
+            <a href="{%  url 'Productos' %}">                        
+                <button type="button" class="btn btn-outline-secondary btn-sm">Back to products</button>
+            </a>
+        </form>
+        
+    </div>
+</div>
+
+{% endblock %}

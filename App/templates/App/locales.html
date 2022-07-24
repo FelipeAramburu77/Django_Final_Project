@@ -1,0 +1,51 @@
+{% extends "App/index.html" %}
+{% load static %}
+
+{% block tituloPagina %}
+Malls
+{% endblock %} 
+
+{% block contenido_que_cambia %}
+
+<section class="bg-light py-2">
+    <div class="container px-1">
+        <div class="row gx-1 justify-content-center">
+            <!-- <div class="col-lg-6"> -->
+                <table class="table table-striped">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Store name</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Mall number</th>
+                            <th scope="col">Opening days</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for local in locales %}
+                                <tr>
+                                    <td scope="1">{{local.name}}</td>
+                                    <td scope="2">{{local.get_city_display}}</td>
+                                    <td scope="3">{{local.address}}</td>
+                                    <td scope="4">{{local.mall_number}}</td>
+                                    <td scope="5">{{local.get_opening_hours_display}}</td>
+                                </tr>
+                        </tbody>
+                            
+                            {% endfor %}
+                </table>
+                    <h3></h3>
+                    <a href="{%  url 'Locales_Formulario' %}">
+                        <button type="button" class="btn btn-primary btn-sm">Add a new store</button>
+                    </a>
+                    <h3></h3>
+                    <a href="{%  url 'Buscar_Local' %}">
+                        <button type="button" class="btn btn-primary btn-sm">Search for a store</button>
+                    </a>
+                <!-- </div> -->
+            </div>
+        </div>
+       
+</section>
+
+{% endblock %}

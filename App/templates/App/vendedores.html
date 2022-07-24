@@ -1,0 +1,51 @@
+{% extends "App/index.html" %}
+{% load static %}
+
+{% block tituloPagina %}
+Salesman
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<section class="bg-light py-2">
+    <div class="container px-1">
+        <div class="row gx-1 justify-content-center">
+            <!-- <div class="col-lg-6"> -->
+                <table class="table table-striped">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Last name</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Mall number</th>
+                            <th scope="col">Birthday</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for vendedor in vendedores %}
+                                <tr>
+                                    <td scope="1">{{vendedor.name}}</td>
+                                    <td scope="2">{{vendedor.last_name}}</td>
+                                    <td scope="3">{{vendedor.email}}</td>
+                                    <td scope="4">{{vendedor.mall_number}}</td>
+                                    <td scope="5">{{vendedor.birthday}}</td>
+                                </tr>
+                        </tbody>
+                            
+                            {% endfor %}
+                </table>
+                    <h3></h3>
+                    <a href="{%  url 'Vendedores_Formulario' %}">
+                        <button type="button" class="btn btn-primary btn-sm">Add a new salesman</button>
+                    <h3></h3>
+                    <a href="{%  url 'Leer_Vendedor' %}">
+                        <button type="button" class="btn btn-primary btn-sm">Edit a salesman</button>
+                    </a>
+                    </a>
+                <!-- </div> -->
+            </div>
+        </div>
+       
+</section>
+
+{% endblock %} 

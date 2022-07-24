@@ -1,0 +1,35 @@
+{% extends "App/index.html" %}
+{% load static %}
+
+{% block tituloPagina %}
+Salesman
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    <section class="bg-light py-2">
+        <div class="container px-1">
+            <div class="row gx-1 justify-content-center"> 
+
+    <ul>                            
+        {% for v in vendedores %}
+
+            <li> 
+                <p>{{v}}
+
+                <a href="{% url 'Editar_Vendedor' v.name %}" class="link-warning">Update</a> |
+                <a href="{% url 'Eliminar_Vendedor' v.name %}" class="link-danger"> Delete</a> 
+                
+
+                </p>
+            </li>
+            
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{%  url 'Vendedores' %}">                        
+        <button type="button" class="btn btn-outline-secondary btn-sm">Back to salesman</button>
+
+{% endblock %} 
+

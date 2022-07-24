@@ -1,0 +1,28 @@
+{% extends "App/index.html" %}
+{% load static %}
+
+{% block tituloPagina %}
+Description
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<section class="bg-light py-2">
+    <div class="container px-1">
+        <div class="row gx-1 justify-content-center">    
+            <h3>S22+</h3>
+                <p>The Samsung Galaxy S22+ is the bigger sibling of the regular Galaxy S22 with it’s 6.6-inch Dynamic AMOLED display with 120Hz refresh rate. Specs also include Qualcomm Snapdragon 8 Gen 1 processor, 4500mAh battery with 45Wcharging speed and Triple camera setup on the back.</p>
+            <br>
+            <h3>IPhone 13</h3>
+            <p>The iPhone 13 is the successor to Apple's best selling iPhone 12, and it improves upon a successful formula: $800 price for a flagship processor and a 6.1-inch screen size that is not too large, nor too small. The iPhone 13 brings a new Apple A15 Bionic chip and improvements to the dual camera setup consisting of a wide and ultra-wide camera.</p>
+            <br>
+            <h3>Huawei P50</h3> 
+                <p>The Huawei P50 comes with Huawei's own operating system - HarmonyOS 2.0. Specs include big 6.5-inch OLED display with 90Hz refresh rate, 4100mAh battery with 66W charging speed and quad camera setup on the back with 50MP main sensor combined with 13MP selfie camera.</p>
+            <br>
+            <h3>Sony Xperia Pro</h3> 
+                <p>The Sony Xperia Pro is designed for video creators supporting high-speed mmWave 5G tech and a micro HDMI port. Otherwise, the phone has the same flagship-level specs as the Xperia 1 II, Snapdragon 865 chipset, 8GB of RAM, 512GB of storage and a 6.5-inch 21:9 4K HDR OLED display.</p>
+            <br>
+            <a href="{%  url 'Productos' %}">                        
+                <button type="button" class="btn btn-outline-secondary btn-sm">Back to products</button>
+
+{% endblock %} 

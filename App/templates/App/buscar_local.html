@@ -1,0 +1,57 @@
+{% extends "App/index.html" %}
+
+{% load static %}
+
+{% block tituloPagina %}
+Search store
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+<section class="bg-light py-2">
+        <div class="container px-1">
+            <div class="row gx-1 justify-content-center">    
+    <p>Search for a store:
+        <br>
+        (enter the number of the store you are looking for)
+
+        <form action="" method="post">
+            {% csrf_token %}
+
+            <input type="" name="mall_number" id="address">
+
+            <input type="submit" value="Search" class="btn btn-outline-success btn-sm"> <a href="{%  url 'Locales' %}">                        
+                <button type="button" class="btn btn-outline-secondary btn-sm">Back to stores</button>
+            </a>
+        </form>    
+    </p>
+
+    
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Mall name</th>
+                <th scope="col">City</th>
+                <th scope="col">Address</th>
+                <th scope="col">Mall number</th>
+                <th scope="col">Opening days</th>
+            </tr>
+            </thead>
+
+            <tbody>
+                {% for resultado in locales %}
+                    <tr>
+                        <td scope="1">{{resultado.name}}</td>
+                        <td scope="2">{{resultado.get_city_display}}</td>
+                        <td scope="3">{{resultado.address}}</td>
+                        <td scope="4">{{resultado.mall_number}}</td>
+                        <td scope="5">{{resultado.get_opening_hours_display}}</td>
+                    </tr>
+            <tbody>
+                
+                {% endfor %}
+        </table>
+    
+</section>
+{% endblock %}

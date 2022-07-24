@@ -1,0 +1,30 @@
+{% extends "App/index.html" %}
+{% load static %}
+
+{% block tituloPagina %}
+Update salesman
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<div style="background-color: rgba(250, 252, 243, 0.712);">
+    <h3 figure class="text-center">Edit salesman</h3>
+        <section class="bg-light py-2">
+            <div class="container px-1">
+                <div class="row gx-1 justify-content-center">
+
+        
+    {% if mi_formulario.errors %}
+    <p style="color: red;"> Check!</p>
+    {% endif %}
+
+    <form action="" method="POST">{% csrf_token %}
+        <!-- Acá está la magia de Django-->        
+        <table>
+            {{ mi_formulario.as_table }}
+        </table>
+    
+            <input type="submit", value="Send"><a href="{%  url 'Vendedores' %}"> 
+ 
+    </form>
+
+{% endblock %} 

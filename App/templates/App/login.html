@@ -1,0 +1,25 @@
+{% extends "App/index.html" %}
+
+{% load static %}
+{% block tituloPagina %}
+Log in
+{% endblock %}
+
+
+{% block contenido_que_cambia %}
+
+<section class="bg-light py-2">
+    <div class="container px-1">
+        <div class="row gx-1 justify-content-center">
+        <h3 figure class="text-center">To be able to add a new product,</h3>
+        <h3 figure class="text-center">you should be logged in! <p>&#x2690;</p></h3>
+<body>
+    <form action="" method="POST">{%csrf_token%}
+        
+        {{form.as_p}}
+
+       <button type="submit">Have a username? Log in!</button>
+       <button><a href="{% url 'Register' %}">If you don't, register!</a></button>
+</body>
+
+{% endblock %}

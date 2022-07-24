@@ -1,0 +1,20 @@
+{% extends "App/index.html" %}
+
+{% load static %}
+{% block tituloPagina %}
+Log out
+{% endblock %}
+
+
+{% block contenido_que_cambia %}
+<section class="bg-light py-2">
+    <div class="container px-1">
+        <div class="row gx-1 justify-content-center">   
+<body>
+    <div>
+        <h3>Logged out <p>&#x1F44B</p></h3>
+        <button type="button" class="btn btn-outline-secondary btn-sm"><a href="{% url 'Inicio' %}">Home page</a></button>
+    </div>
+</body>
+
+{% endblock %}

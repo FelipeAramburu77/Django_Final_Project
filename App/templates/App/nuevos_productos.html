@@ -1,0 +1,36 @@
+{% extends "App/index.html" %}
+{% load static %}
+
+{% block tituloPagina %}
+New products
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<section class="bg-light py-2">
+    <div class="container px-1">
+        <div class="row gx-1 justify-content-center">
+            <!-- <div class="col-lg-6"> -->
+ 
+                    <ul>
+                        {% for p in nuevos_productos %}
+                            <li>
+                                <p>Product: {{p}} </p>
+                                <p> 
+        
+                                    <a href="{% url 'Nuevos_Productos_Editar' p.product %}" class="link-info">Update</a> | 
+                                    <a href="{% url 'Nuevos_Productos_Eliminar' p.product %}" class="link-danger">Delete</a> 
+                                </p> 
+                            </li>
+                        {% endfor %}
+                    </ul>
+                
+                    <a href="{% url 'Nuevos_Productos_Formulario'  %}" class="link-success">Add a new product</a>     
+                </div> 
+                
+            </div>
+        </div>
+       
+</section>
+
+{% endblock %}

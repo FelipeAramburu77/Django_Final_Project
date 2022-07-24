@@ -1,0 +1,24 @@
+{% extends "App/index.html" %}
+
+{% load static %}
+{% block tituloPagina %}
+Register
+{% endblock %}
+
+
+{% block contenido_que_cambia %}
+
+<body>
+    <section class="bg-light py-2">
+        <div class="container px-1">
+            <div class="row gx-1 justify-content-center">
+            <h3 figure class="text-center">Please, register</h3>
+    <form action="" method="POST">{%csrf_token%}
+        
+        {{form.as_p}}
+
+       <button type="submit">Register</button>
+       <button><a href="{% url 'Log_In' %}">If you have a username, sign in!"</a></button>
+</body>
+
+{% endblock %}

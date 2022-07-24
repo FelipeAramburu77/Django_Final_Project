@@ -1,0 +1,28 @@
+{% extends "App/index.html" %}
+{% load static %}
+
+{% block tituloPagina %}
+More info
+{% endblock %}  
+
+{% block contenido_que_cambia %}
+<section class="bg-light py-2">
+    <div class="container px-1">
+        <div class="row gx-1 justify-content-center">
+    <div style="background-color: rgba(250, 252, 243, 0.712);">
+        <h3 figure class="text-center">New products</h3>
+
+        <body> 
+            <p>Product name: <i>{{ nuevos_productos.product }}</i></p>
+            <p>Brand: <i>{{ nuevos_productos.brand }}</i></p>
+            <p>Release date: <i>{{ nuevos_productos.release_date }}</i></p>
+            <p>
+            <a href="{%  url 'Nuevos_Productos' %}">                        
+                    <button type="button" class="btn btn-outline-secondary btn-sm">Back to list</button>
+            </p>
+        
+        </body>    
+
+
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "App/index.html" %}
+{% load static %}
+
+{% block tituloPagina %}
+Products
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<section class="bg-light py-2">
+    <div class="container px-1">
+        <div class="row gx-1 justify-content-center">
+            <!-- <div class="col-lg-6"> -->
+                <table class="table table-striped">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Prize</th>
+                            <th scope="col">Brand</th>
+                            <th scope="col">Stock</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for producto in productos %}
+                                <tr>
+                                    <td scope="1">{{producto.product}}</td>
+                                    <td scope="2">{{producto.prize}}</td>
+                                    <td scope="3">{{producto.get_brand_display}}</td>
+                                    <td scope="4">
+                                    {% if producto.stock == 0 %}
+                                    <p style="color: red;">No stock left</p>
+                                    
+                                    {% elif producto.stock > 0 and producto.stock < 10 %}
+                                        <p style="color: rgb(192, 192, 59);">Last units</p>
+
+                                    {% else %}
+                                        <p style="color: green;">Available</p>
+                                    {% endif %}
+
+                                    </td>
+                                </tr>
+                        </tbody>
+                            
+                            {% endfor %}
+                </table>
+                    <h3></h3>
+                    <a href="{%  url 'Productos_Formulario' %}">
+                        <button type="button" class="btn btn-primary btn-sm">Add a new product</button>
+                    </a>
+                    <h3></h3>
+                    <a href="{%  url 'Buscar_Producto' %}">
+                        <button type="button" class="btn btn-primary btn-sm">Search for a product</button>
+                    </a>
+                    <h3></h3>
+                    <a href="{%  url 'Descripcion' %}">
+                        <button type="button" class="btn btn-primary btn-sm">Product description</button>
+                    </a>
+                <!-- </div> -->
+            </div>
+        </div>
+       
+</section>
+
+{% endblock %}
